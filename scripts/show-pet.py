@@ -42,7 +42,7 @@ def show_osascript(message):
 
 
 # ── AppKit implementation ────────────────────────────────────────────────────
-def show_appkit(message, pet_dir, pet_base, label_path, disp_secs):
+def show_appkit(message, pet_dir, pet_base, label_path, disp_secs, pet_size=100):
     _done[0] = False
 
     app = NSApplication.sharedApplication()
@@ -56,7 +56,7 @@ def show_appkit(message, pet_dir, pet_base, label_path, disp_secs):
             if img:
                 frames.append(img)
 
-    PET_W = PET_H = 100
+    PET_W = PET_H = pet_size
     BUBBLE_W, BUBBLE_H = 200, 64
     PAD = 12
     MARGIN_R = 16
@@ -143,9 +143,10 @@ def main():
     pet_base   = a[2] if len(a) > 2 else "cat1"
     label_path = a[3] if len(a) > 3 else ""
     disp_secs  = int(a[4]) if len(a) > 4 else 5
+    pet_size   = int(a[5]) if len(a) > 5 else 100
 
     if HAS_APPKIT:
-        show_appkit(message, pet_dir, pet_base, label_path, disp_secs)
+        show_appkit(message, pet_dir, pet_base, label_path, disp_secs, pet_size)
     else:
         show_osascript(message)
 

@@ -2,6 +2,7 @@
 TYPE="${1:-complete}"
 LANG="${CLAUDE_RESULT_SPEAK_CAT_LANGUAGE:-en}"
 DISPLAY_SECS="${CLAUDE_RESULT_SPEAK_CAT_DISPLAY_SECONDS:-5}"
+PET_SIZE="${CLAUDE_RESULT_SPEAK_CAT_PET_SIZE:-100}"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 case "$LANG" in
@@ -54,7 +55,7 @@ PET_BASE="${BASES[$RANDOM % ${#BASES[@]}]}"
 # macOS
 if [[ "$(uname -s)" == "Darwin" ]]; then
   /usr/bin/python3 "$SCRIPT_DIR/show-pet.py" \
-    "$FULL_MSG" "$ASSETS_DIR" "$PET_BASE" "$ASSETS_DIR/label.png" "$DISPLAY_SECS" \
+    "$FULL_MSG" "$ASSETS_DIR" "$PET_BASE" "$ASSETS_DIR/label.png" "$DISPLAY_SECS" "$PET_SIZE" \
     >/dev/null 2>&1 &
   exit 0
 fi
@@ -74,6 +75,7 @@ if [[ "$UNAME_S" == MINGW* ]] || [[ "$UNAME_S" == MSYS* ]] || [[ "$UNAME_S" == C
     -PetBaseName "$PET_BASE" \
     -LabelImagePath "$WIN_LABEL_IMAGE" \
     -DisplaySeconds "$DISPLAY_SECS" \
+    -PetSize "$PET_SIZE" \
     >/dev/null 2>&1 &
   exit 0
 fi

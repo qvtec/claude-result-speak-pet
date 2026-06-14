@@ -1,7 +1,7 @@
 {
   "name": "claude-result-speak-cat",
-  "displayName": "Claude Result Speak Cat",
-  "version": "1.3.2",
+  "displayName": "Claude Result Speak Pet",
+  "version": "1.3.3",
   "description": "A desktop pet that pops up in the bottom-right corner to deliver Claude Code notifications.",
   "author": {
     "name": "qvt",
@@ -23,6 +23,14 @@
       "default": 5,
       "min": 2,
       "max": 30
+    },
+    "pet_size": {
+      "type": "number",
+      "title": "Pet size (px)",
+      "description": "Width and height of the cat in pixels",
+      "default": 100,
+      "min": 40,
+      "max": 200
     },
     "message_complete": {
       "type": "string",

@@ -78,6 +78,7 @@ claude plugin enable --scope project claude-result-speak-cat@claude-result-speak
 |------|----|-----------|------|
 | `CLAUDE_RESULT_SPEAK_CAT_LANGUAGE` | string | `en` | 通知メッセージの言語 (`ja` / `en` / `cat`) |
 | `CLAUDE_RESULT_SPEAK_CAT_DISPLAY_SECONDS` | number | `5` | ペットの表示秒数 (2〜30) |
+| `CLAUDE_RESULT_SPEAK_CAT_PET_SIZE` | number | `100` | 猫のサイズ（ピクセル、40〜200） |
 | `CLAUDE_RESULT_SPEAK_CAT_MESSAGE_COMPLETE` | string | _(言語デフォルト)_ | 完了メッセージのカスタマイズ |
 | `CLAUDE_RESULT_SPEAK_CAT_MESSAGE_PERMISSION` | string | _(言語デフォルト)_ | 権限確認メッセージのカスタマイズ |
 | `CLAUDE_RESULT_SPEAK_CAT_MESSAGE_IDLE` | string | _(言語デフォルト)_ | 入力待ちメッセージのカスタマイズ |

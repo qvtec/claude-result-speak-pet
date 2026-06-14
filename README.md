@@ -77,6 +77,7 @@ Add an `env` block to `~/.claude/settings.json`:
 |---------------------|------|---------|-------------|
 | `CLAUDE_RESULT_SPEAK_CAT_LANGUAGE` | string | `en` | Notification language (`ja` / `en` / `cat`) |
 | `CLAUDE_RESULT_SPEAK_CAT_DISPLAY_SECONDS` | number | `5` | How long the pet stays on screen (2–30) |
+| `CLAUDE_RESULT_SPEAK_CAT_PET_SIZE` | number | `100` | Cat size in pixels (40–200) |
 | `CLAUDE_RESULT_SPEAK_CAT_MESSAGE_COMPLETE` | string | _(language default)_ | Completion message override |
 | `CLAUDE_RESULT_SPEAK_CAT_MESSAGE_PERMISSION` | string | _(language default)_ | Permission prompt message override |
 | `CLAUDE_RESULT_SPEAK_CAT_MESSAGE_IDLE` | string | _(language default)_ | Idle message override |

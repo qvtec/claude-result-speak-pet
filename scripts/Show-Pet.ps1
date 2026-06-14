@@ -3,7 +3,8 @@
     [string]$PetImageDir = "",
     [string]$PetBaseName = "cat2",
     [string]$LabelImagePath = "",
-    [int]$DisplaySeconds = 5
+    [int]$DisplaySeconds = 5,
+    [int]$PetSize = 100
 )
 
 Add-Type -AssemblyName System.Windows.Forms
@@ -94,8 +95,8 @@ public static class LayeredWin {
 }
 "@ -ReferencedAssemblies System.Windows.Forms,System.Drawing
 
-$PET_W    = 100
-$PET_H    = 100
+$PET_W    = $PetSize
+$PET_H    = $PetSize
 $BUBBLE_W = 200
 $BUBBLE_H = 68
 $MARGIN   = 16
