@@ -1,12 +1,12 @@
 {
-  "name": "claude-result-speak-pet",
+  "name": "claude-result-speak-cat",
   "owner": {
     "name": "qvtec"
   },
   "description": "Desktop pet that pops up in the bottom-right corner to deliver Claude Code notifications.",
   "plugins": [
     {
-      "name": "claude-result-speak-pet",
+      "name": "claude-result-speak-cat",
       "source": {
         "source": "url",
         "url": "https://github.com/qvtec/claude-result-speak-cat.git"

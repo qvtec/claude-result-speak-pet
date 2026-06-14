@@ -1,5 +1,5 @@
 {
-  "name": "claude-result-speak-pet",
+  "name": "claude-result-speak-cat",
   "displayName": "Claude Result Speak Pet",
   "version": "1.2.0",
   "description": "A desktop pet that pops up in the bottom-right corner to deliver Claude Code notifications.",
