@@ -53,8 +53,17 @@ PET_BASE="${BASES[$RANDOM % ${#BASES[@]}]}"
 
 # macOS
 if [[ "$(uname -s)" == "Darwin" ]]; then
-  if command -v python3 >/dev/null 2>&1; then
-    python3 "$SCRIPT_DIR/show-pet.py" \
+  # Prefer /usr/bin/python3 (has PyObjC) → user's python3 (may have tkinter) → osascript
+  if /usr/bin/python3 -c "import objc" 2>/dev/null; then
+    PYTHON3=/usr/bin/python3
+  elif command -v python3 >/dev/null 2>&1; then
+    PYTHON3=python3
+  else
+    PYTHON3=""
+  fi
+
+  if [[ -n "$PYTHON3" ]]; then
+    "$PYTHON3" "$SCRIPT_DIR/show-pet.py" \
       "$FULL_MSG" "$ASSETS_DIR" "$PET_BASE" "$ASSETS_DIR/label.png" "$DISPLAY_SECS" \
       >/dev/null 2>&1 &
   else

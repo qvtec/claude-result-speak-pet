@@ -15,7 +15,7 @@ A Claude Code plugin that shows a desktop pet in the bottom-right corner to deli
 - **Click to close** — click the pet to dismiss immediately
 - **WSL2 support** — runs via PowerShell from WSL2
 - **Windows support** — runs via PowerShell from Git Bash / MSYS2
-- **macOS support** — runs via Python 3 + tkinter
+- **macOS support** — transparent floating window via AppKit (PyObjC), falls back to tkinter or system notification
 
 ## Requirements
 
@@ -23,28 +23,26 @@ A Claude Code plugin that shows a desktop pet in the bottom-right corner to deli
 |----------|-------------|
 | WSL2 | `powershell.exe` (built-in) |
 | Windows (native) | Git Bash or MSYS2 + `powershell.exe` (built-in) |
-| macOS | Python 3 + `python-tk` (see below) |
+| macOS | See below |
 
-### macOS: installing tkinter
+### macOS: installing PyObjC (recommended)
 
-Homebrew Python does not bundle tkinter. Install it separately:
+For a transparent floating window, install PyObjC into the system Python:
 
 ```bash
-brew install python-tk@3.13
+/usr/bin/python3 -m pip install --user pyobjc-framework-Cocoa
 ```
 
-> If you use a different Python version, replace `3.13` accordingly (e.g. `python-tk@3.12`).  
-> python.org Python already includes tkinter — no extra step needed.
+> This uses the macOS built-in `/usr/bin/python3` with `--user` (no sudo, no Homebrew).  
+> Homebrew Python is not recommended — it replaces system libraries and can break other tools.
 
 ### macOS fallback behavior
 
-| Python / Tk version | Result |
-|---------------------|--------|
-| Python 3 with Tk 8.6+ (Homebrew + python-tk / python.org) | Full pet image + animation |
-| Python 3 with Tk 8.5 (Xcode CLT default) | 🐱 emoji instead of image |
-| `python3` not found | System notification via `osascript` |
-
-No `pip install` required in any case.
+| Environment | Result |
+|-------------|--------|
+| `/usr/bin/python3` + PyObjC installed | Transparent floating window + animation |
+| Any `python3` + tkinter available | Window with black background + animation |
+| No Python available | System notification via `osascript` |
 
 ## Installation
 
@@ -105,7 +103,7 @@ This keeps TTS while letting the pet handle notifications.
 ## Security & Privacy
 
 - **No network access** — notification content never leaves your machine
-- **No external packages** — no third-party dependencies means no supply chain risk
+- **Minimal dependencies** — PyObjC (optional) uses Apple's own framework; tkinter fallback needs no extra install
 - **Fully local** — only plugin scripts and OS built-ins are executed
 
 ## License

@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash -c 'result=$(ls -dt \"$HOME/.claude/plugins/cache/claude-result-speak-pet/claude-result-speak-pet\"/*/  2>/dev/null | head -1); r=\"${CLAUDE_PLUGIN_ROOT:-}\"; [ -z \"$r\" ] && r=\"${result%/}\"; [ -n \"$r\" ] && exec \"$r/scripts/pet-notify.sh\" complete'"
+            "command": "bash -c 'result=$(ls -dt \"$HOME/.claude/plugins/cache/claude-result-speak-cat/claude-result-speak-cat\"/*/  2>/dev/null | head -1); r=\"${CLAUDE_PLUGIN_ROOT:-}\"; [ -z \"$r\" ] && r=\"${result%/}\"; [ -n \"$r\" ] && exec \"$r/scripts/pet-notify.sh\" complete'"
           }
         ]
       }
@@ -17,7 +17,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash -c 'result=$(ls -dt \"$HOME/.claude/plugins/cache/claude-result-speak-pet/claude-result-speak-pet\"/*/  2>/dev/null | head -1); r=\"${CLAUDE_PLUGIN_ROOT:-}\"; [ -z \"$r\" ] && r=\"${result%/}\"; [ -n \"$r\" ] && exec \"$r/scripts/pet-notify.sh\" permission'"
+            "command": "bash -c 'result=$(ls -dt \"$HOME/.claude/plugins/cache/claude-result-speak-cat/claude-result-speak-cat\"/*/  2>/dev/null | head -1); r=\"${CLAUDE_PLUGIN_ROOT:-}\"; [ -z \"$r\" ] && r=\"${result%/}\"; [ -n \"$r\" ] && exec \"$r/scripts/pet-notify.sh\" permission'"
           }
         ]
       },
@@ -26,7 +26,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash -c 'result=$(ls -dt \"$HOME/.claude/plugins/cache/claude-result-speak-pet/claude-result-speak-pet\"/*/  2>/dev/null | head -1); r=\"${CLAUDE_PLUGIN_ROOT:-}\"; [ -z \"$r\" ] && r=\"${result%/}\"; [ -n \"$r\" ] && exec \"$r/scripts/pet-notify.sh\" idle'"
+            "command": "bash -c 'result=$(ls -dt \"$HOME/.claude/plugins/cache/claude-result-speak-cat/claude-result-speak-cat\"/*/  2>/dev/null | head -1); r=\"${CLAUDE_PLUGIN_ROOT:-}\"; [ -z \"$r\" ] && r=\"${result%/}\"; [ -n \"$r\" ] && exec \"$r/scripts/pet-notify.sh\" idle'"
           }
         ]
       }
