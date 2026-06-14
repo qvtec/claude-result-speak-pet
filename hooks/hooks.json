@@ -1,0 +1,35 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash -c 'result=$(ls -dt \"$HOME/.claude/plugins/cache/claude-result-speak-pet/claude-result-speak-pet\"/*/  2>/dev/null | head -1); r=\"${CLAUDE_PLUGIN_ROOT:-}\"; [ -z \"$r\" ] && r=\"${result%/}\"; [ -n \"$r\" ] && exec \"$r/scripts/pet-notify.sh\" complete'"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "permission_prompt",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash -c 'result=$(ls -dt \"$HOME/.claude/plugins/cache/claude-result-speak-pet/claude-result-speak-pet\"/*/  2>/dev/null | head -1); r=\"${CLAUDE_PLUGIN_ROOT:-}\"; [ -z \"$r\" ] && r=\"${result%/}\"; [ -n \"$r\" ] && exec \"$r/scripts/pet-notify.sh\" permission'"
+          }
+        ]
+      },
+      {
+        "matcher": "idle_prompt",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash -c 'result=$(ls -dt \"$HOME/.claude/plugins/cache/claude-result-speak-pet/claude-result-speak-pet\"/*/  2>/dev/null | head -1); r=\"${CLAUDE_PLUGIN_ROOT:-}\"; [ -z \"$r\" ] && r=\"${result%/}\"; [ -n \"$r\" ] && exec \"$r/scripts/pet-notify.sh\" idle'"
+          }
+        ]
+      }
+    ]
+  }
+}

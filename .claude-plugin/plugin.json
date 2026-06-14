@@ -1,0 +1,46 @@
+{
+  "name": "claude-result-speak-pet",
+  "displayName": "Claude Result Speak Pet",
+  "version": "1.0.0",
+  "description": "A desktop pet that pops up in the bottom-right corner to deliver Claude Code notifications.",
+  "author": {
+    "name": "qvt",
+    "url": "https://github.com/qvt"
+  },
+  "license": "MIT",
+  "keywords": ["notification", "pet", "desktop", "windows", "wsl2", "macos"],
+  "userConfig": {
+    "language": {
+      "type": "string",
+      "title": "Language",
+      "description": "Language for notification messages (ja / en / cat)",
+      "default": "en"
+    },
+    "display_seconds": {
+      "type": "number",
+      "title": "Display duration (seconds)",
+      "description": "How long the pet stays on screen",
+      "default": 5,
+      "min": 2,
+      "max": 30
+    },
+    "message_complete": {
+      "type": "string",
+      "title": "Message (complete)",
+      "description": "Completion message. Leave blank to use the language default.",
+      "default": ""
+    },
+    "message_permission": {
+      "type": "string",
+      "title": "Message (permission)",
+      "description": "Permission prompt message. Leave blank to use the language default.",
+      "default": ""
+    },
+    "message_idle": {
+      "type": "string",
+      "title": "Message (idle)",
+      "description": "Idle message. Leave blank to use the language default.",
+      "default": ""
+    }
+  }
+}
