@@ -1,8 +1,10 @@
-# claude-result-speak-pet
+# claude-result-speak-cat
 
 [日本語](README.ja.md)
 
 A Claude Code plugin that shows a desktop pet in the bottom-right corner to deliver notifications.
+
+![demo](demo.png)
 
 ## Features
 
@@ -34,18 +36,18 @@ No `pip install` required in any case.
 ## Installation
 
 ```bash
-claude plugin marketplace add https://github.com/qvtec/claude-result-speak-pet.git
-claude plugin install claude-result-speak-pet@claude-result-speak-pet
+claude plugin marketplace add https://github.com/qvtec/claude-result-speak-cat.git
+claude plugin install claude-result-speak-cat@claude-result-speak-cat
 ```
 
 Then enable the plugin:
 
 ```bash
 # All projects (recommended)
-claude plugin enable --scope user claude-result-speak-pet@claude-result-speak-pet
+claude plugin enable --scope user claude-result-speak-cat@claude-result-speak-cat
 
 # Current project only
-claude plugin enable --scope project claude-result-speak-pet@claude-result-speak-pet
+claude plugin enable --scope project claude-result-speak-cat@claude-result-speak-cat
 ```
 
 ## Configuration

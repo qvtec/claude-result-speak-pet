@@ -7,6 +7,7 @@ No third-party packages needed.
 import sys
 import os
 import glob
+import subprocess
 
 try:
     import tkinter as tk
@@ -15,8 +16,18 @@ except ImportError:
     HAS_TK = False
 
 
+def _get_frontmost_app():
+    try:
+        r = subprocess.run(
+            ["osascript", "-e", 'tell application "System Events" to get name of first application process whose frontmost is true'],
+            capture_output=True, text=True, check=False,
+        )
+        return r.stdout.strip()
+    except Exception:
+        return ""
+
+
 def show_osascript(message):
-    import subprocess
     subprocess.run(
         ["osascript", "-e", f'display notification "{message}" with title "Claude Code"'],
         check=False,
@@ -43,6 +54,8 @@ def main():
     if not HAS_TK:
         show_osascript(message)
         return
+
+    frontmost = _get_frontmost_app()
 
     MARGIN_R = 16
     MARGIN_B = 80   # room for macOS Dock
@@ -119,6 +132,12 @@ def main():
 
     for w in (root, lbl, pet_w):
         w.bind("<Button-1>", lambda e: root.destroy())
+
+    if frontmost:
+        root.after(50, lambda: subprocess.run(
+            ["osascript", "-e", f'tell application "{frontmost}" to activate'],
+            check=False,
+        ))
 
     root.after(disp_secs * 1000, root.destroy)
     root.mainloop()
