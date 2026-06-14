@@ -11,7 +11,7 @@
         "source": "url",
         "url": "https://github.com/qvtec/claude-result-speak-cat.git"
       },
-      "description": "A desktop pet character that appears in the bottom-right corner with speech bubble notifications. Supports custom PNG and animated GIF. WSL2 only."
+      "description": "A desktop pet cat that appears in the bottom-right corner with speech bubble notifications when Claude finishes. Supports WSL2, native Windows (Git Bash/MSYS2), and macOS (AppKit transparent window via PyObjC)."
     }
   ]
 }
