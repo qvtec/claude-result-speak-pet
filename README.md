@@ -14,20 +14,31 @@ A Claude Code plugin that shows a desktop pet in the bottom-right corner to deli
 - **Auto-dismiss** — disappears after a configurable duration
 - **Click to close** — click the pet to dismiss immediately
 - **WSL2 support** — runs via PowerShell from WSL2
-- **macOS support** — runs via Python 3 + tkinter, no extra packages needed
+- **macOS support** — runs via Python 3 + tkinter
 
 ## Requirements
 
 | Platform | Requirements |
 |----------|-------------|
 | WSL2 | `powershell.exe` (built-in) |
-| macOS | Python 3 (built-in); Homebrew / python.org Python recommended for full image support |
+| macOS | Python 3 + `python-tk` (see below) |
+
+### macOS: installing tkinter
+
+Homebrew Python does not bundle tkinter. Install it separately:
+
+```bash
+brew install python-tk@3.13
+```
+
+> If you use a different Python version, replace `3.13` accordingly (e.g. `python-tk@3.12`).  
+> python.org Python already includes tkinter — no extra step needed.
 
 ### macOS fallback behavior
 
 | Python / Tk version | Result |
 |---------------------|--------|
-| Python 3 with Tk 8.6+ (Homebrew / python.org) | Full pet image + animation |
+| Python 3 with Tk 8.6+ (Homebrew + python-tk / python.org) | Full pet image + animation |
 | Python 3 with Tk 8.5 (Xcode CLT default) | 🐱 emoji instead of image |
 | `python3` not found | System notification via `osascript` |
 
