@@ -1,7 +1,7 @@
 {
   "name": "claude-result-speak-pet",
   "displayName": "Claude Result Speak Pet",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A desktop pet that pops up in the bottom-right corner to deliver Claude Code notifications.",
   "author": {
     "name": "qvt",
