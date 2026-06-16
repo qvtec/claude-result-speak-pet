@@ -17,32 +17,6 @@ A Claude Code plugin that shows a desktop pet in the bottom-right corner to deli
 - **Windows support** — runs via PowerShell from Git Bash / MSYS2
 - **macOS support** — transparent floating window via AppKit (PyObjC), falls back to tkinter or system notification
 
-## Requirements
-
-| Platform | Requirements |
-|----------|-------------|
-| WSL2 | `powershell.exe` (built-in) |
-| Windows (native) | Git Bash or MSYS2 + `powershell.exe` (built-in) |
-| macOS | See below |
-
-### macOS: installing PyObjC (recommended)
-
-For a transparent floating window, install PyObjC into the system Python:
-
-```bash
-/usr/bin/python3 -m pip install --user pyobjc-framework-Cocoa
-```
-
-> This uses the macOS built-in `/usr/bin/python3` with `--user` (no sudo, no Homebrew).  
-> Homebrew Python is not recommended — it replaces system libraries and can break other tools.
-
-### macOS fallback behavior
-
-| Environment | Result |
-|-------------|--------|
-| `/usr/bin/python3` + PyObjC installed | Transparent floating window + animation |
-| PyObjC not available | System notification via `osascript` |
-
 ## Installation
 
 ```bash
@@ -83,6 +57,32 @@ Add an `env` block to `~/.claude/settings.json`:
 | `CLAUDE_RESULT_SPEAK_CAT_MESSAGE_IDLE` | string | _(language default)_ | Idle message override |
 
 Set `LANGUAGE=cat` to enable Japanese cat-speak (にゃ language).
+
+## Requirements
+
+| Platform | Requirements |
+|----------|-------------|
+| WSL2 | `powershell.exe` (built-in) |
+| Windows (native) | Git Bash or MSYS2 + `powershell.exe` (built-in) |
+| macOS | See below |
+
+### macOS: installing PyObjC (recommended)
+
+For a transparent floating window, install PyObjC into the system Python:
+
+```bash
+/usr/bin/python3 -m pip install --user pyobjc-framework-Cocoa
+```
+
+> This uses the macOS built-in `/usr/bin/python3` with `--user` (no sudo, no Homebrew).  
+> Homebrew Python is not recommended — it replaces system libraries and can break other tools.
+
+### macOS fallback behavior
+
+| Environment | Result |
+|-------------|--------|
+| `/usr/bin/python3` + PyObjC installed | Transparent floating window + animation |
+| PyObjC not available | System notification via `osascript` |
 
 ## Using with claude-result-speak
 
